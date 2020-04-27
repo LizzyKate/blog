@@ -4,7 +4,6 @@
     <input type="text" v-model="search" placeholder="search blogs">
     <div v-for="(blog, i) in filteredBlogs" :key="i" class="single-blog">
         <h2 v-rainbow>{{blog.title | to-uppercase}}</h2>
-        <article>{{blog.body | snippet}}</article>
     </div>
  
 </div>
@@ -30,8 +29,6 @@ export default {
           console.log(data);
           this.blogs = data.body.slice(0, 10);
       })
-  },
-  computed:{
   },
   mixins:[searchMixin]
 }
